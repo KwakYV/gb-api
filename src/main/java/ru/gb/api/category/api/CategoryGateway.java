@@ -14,7 +14,10 @@ public interface CategoryGateway {
     List<CategoryDto> getCategoryList();
 
     @GetMapping("/{categoryId}")
-    ResponseEntity<?> getCategory(@PathVariable("categoryId") Long id);
+    ResponseEntity<? extends CategoryDto> getCategory(@PathVariable("categoryId") Long id);
+
+    @GetMapping("/{title}")
+    ResponseEntity<? extends CategoryDto> getCategory(@PathVariable("title")String title);
 
     @PostMapping
     ResponseEntity<?> handlePost(@Validated @RequestBody CategoryDto categoryDto);

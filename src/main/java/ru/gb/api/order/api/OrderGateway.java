@@ -14,7 +14,7 @@ public interface OrderGateway {
     List<OrderDto> getOrderList();
 
     @GetMapping("/{orderId}")
-    ResponseEntity<?> getOrder(@PathVariable("orderId") Long id);
+    ResponseEntity<? extends OrderDto> getOrder(@PathVariable("orderId") Long id);
 
     @PostMapping
     ResponseEntity<?> handlePost(@Validated @RequestBody OrderDto orderDto);

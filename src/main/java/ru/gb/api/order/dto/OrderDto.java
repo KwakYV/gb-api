@@ -40,10 +40,12 @@ public class OrderDto implements Serializable {
     @Email
     private String mail;
     private OrderStatus status;
+
     @JsonFormat(pattern="dd.MM.yyyy")
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate deliveryDate;
+
     @NotEmpty
     private Set<ProductDto> products;
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)

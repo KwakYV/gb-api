@@ -37,4 +37,5 @@ public class UserDto {
     @NotBlank(message = "is required")
     @Size(min = 5, message = "phone length must be greater than 5 symbols")
     private String phone;
+    private String secret;
 }
